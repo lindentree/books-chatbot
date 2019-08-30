@@ -1,0 +1,82 @@
+intents:
+- greet
+- goodbye
+- affirm
+- deny
+- mood_great
+- mood_unhappy
+- ident_inquiry
+- personal_inquiry
+- inform_books:
+    use_entities: []
+- enter_phone_number:
+    use_entities: []
+- agree
+entities:
+- genre
+- phone_number
+slots:
+  genre:
+    type: unfeaturized
+    auto_fill: false
+  phone_number:
+    type: unfeaturized
+    auto_fill: false
+  recommendations:
+    type: unfeaturized
+    auto_fill: false
+  requested_slot:
+    type: unfeaturized
+templates:
+  utter_greet:
+  - text: Hey! How are you?
+  utter_cheer_up:
+  - text: 'Here is something to cheer you up:'
+    image: https://i.imgur.com/nGF1K8f.jpg
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye!
+  utter_intro:
+  - text: My name's Eina
+  utter_mood:
+  - text: How are you feeling today?
+  utter_hobby:
+  - text: I like books!
+  utter_ask:
+  - text: What kind of books do you like?
+  utter_preference:
+  - text: I like science fiction novels! My favorite is Shards of Honor by Lois McMaster
+      Bujold
+  utter_submit:
+  - text: Got it!
+  utter_thanks:
+  - text: Thanks for chatting with me!
+  utter_ask_number:
+  - text: What's your phone number? I can suggest a book in the genre you like
+  utter_recommend:
+  - text: I haven't read this one, but I heard good things about it.
+  utter_disappoint:
+  - text: Oh, that's too bad
+actions:
+- utter_greet
+- utter_cheer_up
+- utter_did_that_help
+- utter_happy
+- utter_goodbye
+- utter_intro
+- utter_mood
+- utter_hobby
+- utter_ask
+- utter_preference
+- utter_submit
+- utter_thanks
+- utter_ask_number
+- utter_recommend
+- utter_disappoint
+- action_search_books
+- action_recommend
+forms:
+- book_recommend_form
