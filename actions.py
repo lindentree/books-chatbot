@@ -73,7 +73,7 @@ class ActionSearchBooks(Action):
         
         book_genre = tracker.get_slot("genre")
         url = "https://www.googleapis.com/books/v1/volumes?q=subject:" + book_genre
-        print('sanity', url)
+       
         r = requests.get(url)
         data = r.json()
 
@@ -100,8 +100,6 @@ class ActionRecommend(Action):
         else:
 
             user_number = "+" + user_number
-            
-            print("confirm", test, user_number)
 
             placeholder = "http://books.google.com/books?id=CXvurQEACAAJ&hl=&source=gbs_api"
 
@@ -110,6 +108,6 @@ class ActionRecommend(Action):
                 from_=twilio_number,
                 body=test)
 
-            print(message.sid)
+            #print(message.sid)
             dispatcher.utter_message("did you get my recommendation?")
             return []
